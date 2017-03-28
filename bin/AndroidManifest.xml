@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="main.java.net.zetetic"
+    android:versionCode="1"
+    android:versionName="1.0-SNAPSHOT" >
+
+    <uses-sdk
+        android:minSdkVersion="7"
+        android:targetSdkVersion="23" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".ZeteticApplication"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
+        <activity android:name=".TestSuiteActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name=".ZeteticContentProvider"
+            android:authorities=".sqlcipher.zeteticprovider" />
+        <provider
+            android:name=".ZeteticContentProvider2"
+            android:authorities=".sqlcipher.zeteticprovider2"
+            android:process=":provider" />
+    </application>
+
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+</manifest>
